@@ -1,0 +1,10 @@
+/.env
+/.idea
+/vendor
+/node_modules
+.DS_Store
+config/license.key
+
+# Build artifacts
+web/**/*
+!web/.gitkeep
