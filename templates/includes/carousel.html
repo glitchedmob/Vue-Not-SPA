@@ -6,28 +6,6 @@
 <div class="carousel">
   <div class="container container-medium">
     <div class="headline">Carousel</div>
-    <app-carousel total-slides="{{ slides|length }}">
-      <div class="carousel-wrapper" slot-scope="props">
-        <button class="btn btn-primary" @click="props.previous">&#8701;</button>
-        <div class="slides-wrapper">
-          <transition :name="props.animation" mode="out-in">
-            {% for slide in slides %}
-              <div
-                class="slide"
-                v-if="props.active === {{ loop.index0 }}"
-                key="{{ loop.index0 }}"
-                {% if not loop.first %}
-                  v-cloak
-                {% endif %}
-              >
-                <p class="title">{{ slide.title }}</p>
-                <img src="https://via.placeholder.com/800x300" alt="">
-              </div>
-            {% endfor %}
-          </transition>
-        </div>
-        <button class="btn btn-primary" @click="props.next">&#8702;</button>
-      </div>
-    </app-carousel>
+
   </div>
 </div>
