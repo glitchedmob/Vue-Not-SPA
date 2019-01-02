@@ -1,0 +1,27 @@
+html {
+    // This allows 1rem = 10px
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+.headline {
+    text-align: center;
+    margin: 0 0 3rem 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+}

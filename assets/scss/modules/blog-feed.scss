@@ -1,0 +1,44 @@
+.blog-feed {
+    margin: $spacing 0;
+
+    .feed-items,
+    .feed-wrapper:not(.mounted) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -2rem -4rem -2rem;
+    }
+
+    .feed-item {
+        width: percentage(1/3);
+        padding: 0 2rem 4rem 2rem;
+    }
+
+    .feed-item-content {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+
+    .load-more {
+        text-align: center;
+        margin: 3rem 0;
+    }
+
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}

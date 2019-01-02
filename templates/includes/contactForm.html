@@ -1,0 +1,41 @@
+<div class="contact-form">
+  <div class="container container-medium">
+    <h2 class="headline">Contact</h2>
+    <app-contact-form>
+      <div slot-scope="props">
+        <transition name="contact-form" mode="out-in">
+          <form
+            action=""
+            class="form"
+            v-if="!props.success"
+            @submit="props.onSubmit"
+            v-register-node="props.registerForm"
+          >
+            <div class="form-control half-width">
+              <input type="text" name="name" placeholder="Name *" required>
+            </div>
+            <div class="form-control half-width">
+              <input type="email" name="email" placeholder="Email *" required>
+            </div>
+            <div class="form-control full-width">
+              <textarea name="message" rows="10" placeholder="Message *" required></textarea>
+            </div>
+            <div class="form-control submit full-width">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+            <vue-recaptcha
+              @verify="props.onVerify"
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              size="invisible"
+              v-register-node="props.registerRecaptcha"
+            >
+            </vue-recaptcha>
+          </form>
+          <div class="success" v-if="props.success" v-cloak>
+            <p class="message">Thanks for reaching out. We'll get back to you shortly.</p>
+          </div>
+        </transition>
+      </div>
+    </app-contact-form>
+  </div>
+</div>

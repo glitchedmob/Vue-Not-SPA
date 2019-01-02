@@ -1,0 +1,55 @@
+.carousel {
+    margin: $spacing 0;
+
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn {
+        font-size: 4rem;
+        padding: .2rem 1.5rem;
+    }
+
+    .slide {
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .next-slide,
+    .prev-slide {
+        &-enter-active,
+        &-leave-active {
+            transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+        }
+
+        &-enter,
+        &-leave-to {
+            opacity: 0;
+        }
+    }
+
+    .next-slide {
+        &-enter {
+            transform: translateX(-50px);
+        }
+
+        &-leave-to {
+            transform: translateX(50px);
+        }
+    }
+
+    .prev-slide {
+        &-enter {
+            transform: translateX(50px);
+        }
+
+        &-leave-to {
+            transform: translateX(-50px);
+        }
+    }
+}

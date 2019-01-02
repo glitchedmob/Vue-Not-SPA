@@ -1,0 +1,34 @@
+{% set devMode = craft.app.config.general.devMode ? 'true' : 'false' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue !SPA</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer>
+  </script>
+</head>
+<body>
+
+<div id="root">
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+</div>
+
+<script type="text/javascript">
+  (function(global) {
+    global.$app = global.$app || {};
+    global.$app.csrfTokenName = '{{ craft.app.config.general.csrfTokenName|raw }}';
+    global.$app.csrfTokenValue = '{{ craft.app.request.csrfToken|raw }}';
+    global.$app.devMode = '{{ devMode }}'
+  })(window);
+</script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

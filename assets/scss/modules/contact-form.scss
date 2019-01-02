@@ -1,0 +1,68 @@
+.contact-form {
+    margin: $spacing 0;
+
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem -3.5rem -1rem;
+
+        .half-width {
+            width: 50%;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+    }
+
+    .form-control {
+        margin: 0 0 3.5rem 0;
+        padding: 0 1rem;
+
+        input,
+        textarea {
+            display: block;
+            appearance: none;
+            background: #FFFFFF;
+            padding: 1rem 3rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: color(text);
+            border-radius: 2rem;
+            border: 2px solid $blue;
+            box-sizing: border-box;
+            width: 100%;
+            transition: border 250ms ease-in-out;
+
+            &:focus {
+                border-color: $blue-dark;
+            }
+        }
+
+        textarea {
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .success {
+        height: 42.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .message {
+            font-size: 2rem;
+        }
+    }
+
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 250ms ease-in-out;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+    }
+}

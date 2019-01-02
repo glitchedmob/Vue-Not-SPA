@@ -1,0 +1,22 @@
+{% set posts = [] %}
+{% for i in 1..6 %}
+  {% set posts = posts|merge([{ title: 'Blog Post ' ~ i }]) %}
+{% endfor %}
+
+<div class="blog-feed">
+  <div class="container container-medium">
+    <h2 class="headline">Blog Feed</h2>
+    <app-blog-feed class="feed-wrapper" v-mounted>
+      {% for post in posts %}
+        <div class="feed-item" key="{{ loop.index0 }}">
+          <div class="feed-item-content">
+            <div class="img-wrapper">
+              <img src="https://via.placeholder.com/250x200" alt="">
+            </div>
+            <p class="title">{{ post.title }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </app-blog-feed>
+  </div>
+</div>
